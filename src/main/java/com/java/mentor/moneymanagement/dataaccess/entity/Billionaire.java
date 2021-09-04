@@ -1,4 +1,4 @@
-package com.java.mentor.moneymanagement.dataaccess;
+package com.java.mentor.moneymanagement.dataaccess.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
