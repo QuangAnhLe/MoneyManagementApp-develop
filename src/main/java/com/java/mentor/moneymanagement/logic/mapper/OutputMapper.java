@@ -5,7 +5,7 @@ import com.java.mentor.moneymanagement.logic.to.OutputTO;
 
 public class OutputMapper {
 
-    public static OutputTO mapOutputEntitytoT(Output output){
+    public static OutputTO mapOutputEntitytoTO(Output output){
         return new OutputTO()
                 .setOutputId(output.getOutputId())
                 .setOutputDate(output.getOutputDate())

@@ -4,7 +4,7 @@ import com.java.mentor.moneymanagement.logic.to.InputTO;
 
 public class InputMapper {
 
-    public static InputTO mapInputEntitytoT(Input input){
+    public static InputTO mapInputEntitytoTO(Input input){
         return new InputTO()
                 .setInputId(input.getInputId())
                 .setInputDate(input.getInputDate())

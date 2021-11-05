@@ -12,15 +12,16 @@ public class Input {
 - inputDescription: String
 - inputCategory: String
 - inputAmount: String*/
+    // Format
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
     private Long inputId;
-    private String inputDate;
+    private Long inputDate;
     private String inputDescription;
-    private String inputCategory;
-    private String inputAmount;
+    private Category inputCategory;
+    private Double inputAmount;
 
-    public Input(Long inputId, String inputDate, String inputDescription, String inputCategory, String inputAmount) {
+    public Input(Long inputId, Long inputDate, String inputDescription, Category inputCategory, Double inputAmount) {
         this.inputId = inputId;
         this.inputDate = inputDate;
         this.inputDescription = inputDescription;
@@ -36,11 +37,11 @@ public class Input {
         this.inputId = inputId;
     }
 
-    public String getInputDate() {
+    public Long getInputDate() {
         return inputDate;
     }
 
-    public void setInputDate(String inputDate) {
+    public void setInputDate(Long inputDate) {
         this.inputDate = inputDate;
     }
 
@@ -52,19 +53,19 @@ public class Input {
         this.inputDescription = inputDescription;
     }
 
-    public String getInputCategory() {
+    public Category getInputCategory() {
         return inputCategory;
     }
 
-    public void setInputCategory(String inputCategory) {
+    public void setInputCategory(Category inputCategory) {
         this.inputCategory = inputCategory;
     }
 
-    public String getInputAmount() {
+    public Double getInputAmount() {
         return inputAmount;
     }
 
-    public void setInputAmount(String inputAmount) {
+    public void setInputAmount(Double inputAmount) {
         this.inputAmount = inputAmount;
     }
 }

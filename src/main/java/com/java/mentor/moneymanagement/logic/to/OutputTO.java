@@ -1,13 +1,14 @@
 package com.java.mentor.moneymanagement.logic.to;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class OutputTO {
 
     private Long outputId;
-    private String outputDate;
+    private Long outputDate;
     private String outputDescription;
-    private String outputAmount;
+    private BigDecimal outputAmount;
 
 
     public Long getOutputId() {
@@ -19,11 +20,11 @@ public class OutputTO {
         return this;
     }
 
-    public String getOutputDate() {
+    public Long getOutputDate() {
         return outputDate;
     }
 
-    public OutputTO setOutputDate(String outputDate) {
+    public OutputTO setOutputDate(Long outputDate) {
         this.outputDate = outputDate;
         return this;
     }
@@ -37,11 +38,11 @@ public class OutputTO {
         return this;
     }
 
-    public String getOutputAmount() {
+    public BigDecimal getOutputAmount() {
         return outputAmount;
     }
 
-    public OutputTO setOutputAmount(String outputAmount) {
+    public OutputTO setOutputAmount(BigDecimal outputAmount) {
         this.outputAmount = outputAmount;
         return this;
     }

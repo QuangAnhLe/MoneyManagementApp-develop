@@ -5,9 +5,9 @@ import java.util.Objects;
 public class InputTO {
 
     private Long inputId;
-    private String inputDate;
+    private Long inputDate;
     private String inputDescription;
-    private String inputAmount;
+    private Double inputAmount;
 
 
     public Long getInputId() {
@@ -20,11 +20,11 @@ public class InputTO {
     }
 
 
-    public String getInputDate() {
+    public Long getInputDate() {
         return inputDate;
     }
 
-    public InputTO setInputDate(String inputDate) {
+    public InputTO setInputDate(Long inputDate) {
         this.inputDate = inputDate;
         return this;
     }
@@ -38,11 +38,11 @@ public class InputTO {
         return this;
     }
 
-    public String getInputAmount() {
+    public Double getInputAmount() {
         return inputAmount;
     }
 
-    public InputTO setInputAmount(String inputAmount) {
+    public InputTO setInputAmount(Double inputAmount) {
         this.inputAmount = inputAmount;
         return this;
     }

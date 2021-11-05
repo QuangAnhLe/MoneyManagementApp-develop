@@ -3,15 +3,16 @@ package com.java.mentor.moneymanagement.dataaccess.entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 public class Output {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long outputId;
-    private String outputDate;
+    private Long outputDate;
     private String outputDescription;
-    private String outputCategory;
-    private String outputAmount;
+    private Category outputCategory;
+    private BigDecimal outputAmount;
 
     public Long getOutputId() {
         return outputId;
@@ -21,11 +22,11 @@ public class Output {
         this.outputId = outputId;
     }
 
-    public String getOutputDate() {
+    public Long getOutputDate() {
         return outputDate;
     }
 
-    public void setOutputDate(String outputDate) {
+    public void setOutputDate(Long outputDate) {
         this.outputDate = outputDate;
     }
 
@@ -37,19 +38,19 @@ public class Output {
         this.outputDescription = outputDescription;
     }
 
-    public String getOutputCategory() {
+    public Category getOutputCategory() {
         return outputCategory;
     }
 
-    public void setOutputCategory(String outputCategory) {
+    public void setOutputCategory(Category outputCategory) {
         this.outputCategory = outputCategory;
     }
 
-    public String getOutputAmount() {
+    public BigDecimal getOutputAmount() {
         return outputAmount;
     }
 
-    public void setOutputAmount(String outputAmount) {
+    public void setOutputAmount(BigDecimal outputAmount) {
         this.outputAmount = outputAmount;
     }
 }
