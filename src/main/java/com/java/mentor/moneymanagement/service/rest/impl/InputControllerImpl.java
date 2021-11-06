@@ -1,11 +1,11 @@
-package com.java.mentor.moneymanagement.service.REST.impl;
+package com.java.mentor.moneymanagement.service.rest.impl;
 
-import com.java.mentor.moneymanagement.logic.BillionaireService;
 import com.java.mentor.moneymanagement.logic.InputService;
-import com.java.mentor.moneymanagement.logic.to.BillionaireTO;
 import com.java.mentor.moneymanagement.logic.to.InputTO;
-import com.java.mentor.moneymanagement.service.REST.InputController;
+import com.java.mentor.moneymanagement.service.rest.InputController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -15,16 +15,13 @@ public class InputControllerImpl implements InputController {
 
     private InputService inputService;
 
-
-
-    @GetMapping("input")
-    public String hallo()
-    {
-        return "input";
-    }
-
-    @GetMapping("/getinput")
+    @GetMapping("/input")
     public List<InputTO> getInput() {
         return inputService.getInputs();
+    }
+
+    @PostMapping("/input")
+    public InputTO createInput(@RequestBody InputTO inputTO) {
+        return inputService.createInput(inputTO);
     }
 }

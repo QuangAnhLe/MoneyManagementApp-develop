@@ -1,5 +1,6 @@
 package com.java.mentor.moneymanagement.logic.to;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class InputTO {
@@ -7,7 +8,7 @@ public class InputTO {
     private Long inputId;
     private Long inputDate;
     private String inputDescription;
-    private Double inputAmount;
+    private BigDecimal inputAmount;
 
 
     public Long getInputId() {
@@ -38,11 +39,11 @@ public class InputTO {
         return this;
     }
 
-    public Double getInputAmount() {
+    public BigDecimal getInputAmount() {
         return inputAmount;
     }
 
-    public InputTO setInputAmount(Double inputAmount) {
+    public InputTO setInputAmount(BigDecimal inputAmount) {
         this.inputAmount = inputAmount;
         return this;
     }

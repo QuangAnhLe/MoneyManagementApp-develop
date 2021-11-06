@@ -7,4 +7,11 @@ import java.util.List;
 public interface InputService {
 
     List<InputTO> getInputs();
+    InputTO createInput(InputTO inputTO);
+
+    /*createInput
+     deleteInput
+    updateInput*/
+
+
 }

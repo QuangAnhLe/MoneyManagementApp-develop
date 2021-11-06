@@ -1,8 +1,8 @@
-package com.java.mentor.moneymanagement.service.REST.impl;
+package com.java.mentor.moneymanagement.service.rest.impl;
 
 import com.java.mentor.moneymanagement.logic.OutputService;
 import com.java.mentor.moneymanagement.logic.to.OutputTO;
-import com.java.mentor.moneymanagement.service.REST.OutputController;
+import com.java.mentor.moneymanagement.service.rest.OutputController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -11,4 +11,13 @@ public class InputMapper {
                 .setInputDescription(input.getInputDescription())
                 .setInputAmount(input.getInputAmount());
     }
+    public static Input mapInputTOtoEntity(InputTO inputto){
+        Input entity = new Input();
+        entity.setInputId(inputto.getInputId());
+        entity.setInputDate(inputto.getInputDate());
+        entity.setInputDescription(inputto.getInputDescription());
+        entity.setInputAmount(inputto.getInputAmount());
+        return entity;
+    }
+
 }

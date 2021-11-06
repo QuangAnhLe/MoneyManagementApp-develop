@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class Input {
@@ -19,15 +20,7 @@ public class Input {
     private Long inputDate;
     private String inputDescription;
     private Category inputCategory;
-    private Double inputAmount;
-
-    public Input(Long inputId, Long inputDate, String inputDescription, Category inputCategory, Double inputAmount) {
-        this.inputId = inputId;
-        this.inputDate = inputDate;
-        this.inputDescription = inputDescription;
-        this.inputCategory = inputCategory;
-        this.inputAmount = inputAmount;
-    }
+    private BigDecimal inputAmount;
 
     public Long getInputId() {
         return inputId;
@@ -61,11 +54,11 @@ public class Input {
         this.inputCategory = inputCategory;
     }
 
-    public Double getInputAmount() {
+    public BigDecimal getInputAmount() {
         return inputAmount;
     }
 
-    public void setInputAmount(Double inputAmount) {
+    public void setInputAmount(BigDecimal inputAmount) {
         this.inputAmount = inputAmount;
     }
 }

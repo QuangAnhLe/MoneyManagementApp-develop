@@ -1,4 +1,4 @@
-package com.java.mentor.moneymanagement.service.REST;
+package com.java.mentor.moneymanagement.service.rest;
 
 import com.java.mentor.moneymanagement.logic.to.OutputTO;
 

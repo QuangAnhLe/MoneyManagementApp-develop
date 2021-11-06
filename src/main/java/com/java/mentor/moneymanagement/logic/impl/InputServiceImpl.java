@@ -1,6 +1,7 @@
 package com.java.mentor.moneymanagement.logic.impl;
 
 import com.java.mentor.moneymanagement.dataaccess.InputRepository;
+import com.java.mentor.moneymanagement.dataaccess.entity.Input;
 import com.java.mentor.moneymanagement.logic.InputService;
 import com.java.mentor.moneymanagement.logic.mapper.InputMapper;
 import com.java.mentor.moneymanagement.logic.to.InputTO;
@@ -24,5 +25,11 @@ public class InputServiceImpl implements InputService {
                 .stream()
                 .map(InputMapper::mapInputEntitytoTO)
                 .collect(Collectors.toList());
+    }
+    @Override
+    public InputTO createInput(InputTO inputTO) {
+        Input entity = InputMapper.mapInputTOtoEntity(inputTO);
+        Input savedInput = inputRepository.save(entity);
+        return InputMapper.mapInputEntitytoTO(savedInput);
     }
 }
