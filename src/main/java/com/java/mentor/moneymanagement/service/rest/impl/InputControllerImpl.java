@@ -15,6 +15,10 @@ public class InputControllerImpl implements InputController {
 
     private InputService inputService;
 
+    public InputControllerImpl(InputService inputService) {
+        this.inputService = inputService;
+    }
+
     @GetMapping("/input")
     public List<InputTO> getInput() {
         return inputService.getInputs();

@@ -5,11 +5,11 @@ import java.util.Objects;
 
 public class InputTO {
 
-    private Long inputId;
+    private Long inputId; // can be deleted
     private Long inputDate;
     private String inputDescription;
     private BigDecimal inputAmount;
-
+    // category
 
     public Long getInputId() {
         return inputId;
@@ -19,7 +19,6 @@ public class InputTO {
         this.inputId = inputId;
         return this;
     }
-
 
     public Long getInputDate() {
         return inputDate;
@@ -50,11 +49,12 @@ public class InputTO {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof InputTO)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof InputTO))
+            return false;
         InputTO that = (InputTO) o;
-        return Objects.equals(inputId, that.inputId)
-                && Objects.equals(inputDate, that.inputDate)
+        return Objects.equals(inputId, that.inputId) && Objects.equals(inputDate, that.inputDate)
                 && Objects.equals(inputDescription, that.inputDescription)
                 && Objects.equals(inputAmount, that.inputAmount);
     }
