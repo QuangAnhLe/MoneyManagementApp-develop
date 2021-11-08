@@ -51,11 +51,12 @@ public class InputTO {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof InputTO)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof InputTO))
+            return false;
         InputTO that = (InputTO) o;
-        return Objects.equals(inputId, that.inputId)
-                && Objects.equals(inputDate, that.inputDate)
+        return Objects.equals(inputId, that.inputId) && Objects.equals(inputDate, that.inputDate)
                 && Objects.equals(inputDescription, that.inputDescription)
                 && Objects.equals(inputAmount, that.inputAmount);
     }
