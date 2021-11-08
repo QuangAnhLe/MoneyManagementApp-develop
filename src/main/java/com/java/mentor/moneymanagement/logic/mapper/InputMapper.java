@@ -9,7 +9,8 @@ public class InputMapper {
                 .setInputId(input.getInputId())
                 .setInputDate(input.getInputDate())
                 .setInputDescription(input.getInputDescription())
-                .setInputAmount(input.getInputAmount());
+                .setInputAmount(input.getInputAmount())
+                .setInputCategory(input.getInputCategory());
     }
     public static Input mapInputTOtoEntity(InputTO inputto){
         Input entity = new Input();

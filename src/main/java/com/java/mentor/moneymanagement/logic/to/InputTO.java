@@ -11,6 +11,7 @@ public class InputTO {
     private Long inputDate;
     private String inputDescription;
     private BigDecimal inputAmount;
+    private Category inputCategory;
 
     public Long getInputId() {
         return inputId;
@@ -49,6 +50,14 @@ public class InputTO {
         return this;
     }
 
+    public Category getInputCategory() {
+        return inputCategory;
+    }
+
+    public InputTO setInputCategory(Category inputCategory) {
+        this.inputCategory = inputCategory;
+        return this;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -58,7 +67,8 @@ public class InputTO {
         InputTO that = (InputTO) o;
         return Objects.equals(inputId, that.inputId) && Objects.equals(inputDate, that.inputDate)
                 && Objects.equals(inputDescription, that.inputDescription)
-                && Objects.equals(inputAmount, that.inputAmount);
+                && Objects.equals(inputAmount, that.inputAmount)
+                && Objects.equals(inputDescription, that.inputDescription);
     }
 
     @Override
@@ -66,6 +76,8 @@ public class InputTO {
         return Objects.hash(inputId,
                 inputDate,
                 inputDescription,
-                inputAmount);
+                inputAmount,
+                inputDescription);
     }
+
 }
