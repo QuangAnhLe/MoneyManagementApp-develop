@@ -1,5 +1,7 @@
 package com.java.mentor.moneymanagement.logic.to;
 
+import com.java.mentor.moneymanagement.dataaccess.entity.Category;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -9,7 +11,6 @@ public class InputTO {
     private Long inputDate;
     private String inputDescription;
     private BigDecimal inputAmount;
-
 
     public Long getInputId() {
         return inputId;
@@ -61,6 +62,9 @@ public class InputTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(inputId, inputDate, inputDescription, inputAmount);
+        return Objects.hash(inputId,
+                inputDate,
+                inputDescription,
+                inputAmount);
     }
 }

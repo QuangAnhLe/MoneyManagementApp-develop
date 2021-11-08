@@ -32,4 +32,25 @@ public class InputServiceImpl implements InputService {
         Input savedInput = inputRepository.save(entity);
         return InputMapper.mapInputEntitytoTO(savedInput);
     }
+
+    @Override
+    public Input updateInput(InputTO inputTO, Long inputId) {
+        return inputRepository.findById(inputId)
+                .map(input->{
+                    input.setInputDate(inputTO.getInputDate());
+                    input.setInputDescription(inputTO.getInputDescription());
+                    input.setInputAmount(inputTO.getInputAmount());
+                    return inputRepository.save(input);
+                })
+                .orElseGet(() -> {
+                    Input entity = InputMapper.mapInputTOtoEntity(inputTO);
+                    entity.setInputId(inputId);
+                    return inputRepository.save(entity);
+                });
+    }
+
+    @Override
+    public void deleteInput(Long inputId) {
+        inputRepository.deleteById(inputId);
+    }
 }
