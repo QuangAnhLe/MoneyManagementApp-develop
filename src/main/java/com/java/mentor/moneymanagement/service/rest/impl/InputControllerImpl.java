@@ -1,5 +1,6 @@
 package com.java.mentor.moneymanagement.service.rest.impl;
 
+import com.java.mentor.moneymanagement.dataaccess.entity.Input;
 import com.java.mentor.moneymanagement.logic.InputService;
 import com.java.mentor.moneymanagement.logic.to.InputTO;
 import com.java.mentor.moneymanagement.service.rest.InputController;
