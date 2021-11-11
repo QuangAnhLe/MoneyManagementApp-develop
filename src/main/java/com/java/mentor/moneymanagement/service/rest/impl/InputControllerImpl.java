@@ -31,7 +31,7 @@ public class InputControllerImpl implements InputController {
         return inputService.updateInput(inputTO, id);
     }
     @DeleteMapping("/input/{id}")
-    public void deleteEmployee(@PathVariable Long id) {
+    public void deleteInput(@PathVariable Long id) {
         inputService.deleteInput(id);
     }
 }

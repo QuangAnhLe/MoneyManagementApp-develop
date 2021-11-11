@@ -8,12 +8,7 @@ import java.math.BigDecimal;
 
 @Entity
 public class Input {
-/*- inputId: long
-- inputDate: String
-- inputDescription: String
-- inputCategory: String
-- inputAmount: String*/
-    // Format
+
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
     private Long inputId;

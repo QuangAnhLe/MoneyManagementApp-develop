@@ -11,5 +11,4 @@ public interface InputService {
     InputTO createInput(InputTO inputTO);
     Input updateInput(InputTO inputTO, Long inputId);
     void deleteInput(Long inputId);
-
 }
