@@ -1,10 +1,12 @@
 package com.java.mentor.moneymanagement.service.rest.impl;
 
+import com.java.mentor.moneymanagement.dataaccess.entity.Input;
+import com.java.mentor.moneymanagement.dataaccess.entity.Output;
 import com.java.mentor.moneymanagement.logic.OutputService;
+import com.java.mentor.moneymanagement.logic.to.InputTO;
 import com.java.mentor.moneymanagement.logic.to.OutputTO;
 import com.java.mentor.moneymanagement.service.rest.OutputController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,8 +19,22 @@ public class OutputControllerImpl implements OutputController {
         this.outputService = outputService;
     }
 
-    @GetMapping("/getOutput")
+    @GetMapping("/output")
     public List<OutputTO> getOutput() {
         return outputService.getOutputs();
+    }
+
+    @PostMapping( "/output")
+    public OutputTO createOutput(@RequestBody OutputTO outputTO) {
+        return outputService.createOutput(outputTO);
+    }
+
+    @PutMapping("/output/{id}")
+    public Output updateOutput(@RequestBody OutputTO outputTO, @PathVariable Long id){
+        return outputService.updateOutput(outputTO, id);
+    }
+    @DeleteMapping("/output/{id}")
+    public void deleteOutput(@PathVariable Long id) {
+        outputService.deleteOutput(id);
     }
 }

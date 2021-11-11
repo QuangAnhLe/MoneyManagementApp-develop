@@ -1,5 +1,7 @@
 package com.java.mentor.moneymanagement.logic.to;
 
+import com.java.mentor.moneymanagement.dataaccess.entity.Category;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -9,6 +11,7 @@ public class OutputTO {
     private Long outputDate;
     private String outputDescription;
     private BigDecimal outputAmount;
+    private Category outputCategory;
 
 
     public Long getOutputId() {
@@ -46,6 +49,14 @@ public class OutputTO {
         this.outputAmount = outputAmount;
         return this;
     }
+    public Category getOutputCategory() {
+        return outputCategory;
+    }
+
+    public OutputTO  setOutputCategory(Category outputCategory) {
+        this.outputCategory = outputCategory;
+        return this;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -62,4 +73,6 @@ public class OutputTO {
     public int hashCode() {
         return Objects.hash(outputId, outputDate, outputDescription, outputAmount);
     }
+
+
 }
