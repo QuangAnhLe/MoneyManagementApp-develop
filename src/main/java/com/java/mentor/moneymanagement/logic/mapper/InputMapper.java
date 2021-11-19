@@ -18,6 +18,7 @@ public class InputMapper {
         entity.setInputDate(inputto.getInputDate());
         entity.setInputDescription(inputto.getInputDescription());
         entity.setInputAmount(inputto.getInputAmount());
+        entity.setInputCategory(inputto.getInputCategory());
         return entity;
     }
 

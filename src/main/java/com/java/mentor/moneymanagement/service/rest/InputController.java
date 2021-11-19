@@ -8,7 +8,7 @@ import java.util.List;
 public interface InputController {
 
     List<InputTO> getInput();
-    Input updateInput(InputTO inputTO, Long inputId);
+    InputTO updateInput(InputTO inputTO, Long inputId);
     InputTO createInput(InputTO inputTO);
     void deleteInput(Long inputId);
 }

@@ -26,6 +26,7 @@ public class InputServiceImpl implements InputService {
                 .map(InputMapper::mapInputEntitytoTO)
                 .collect(Collectors.toList());
     }
+
     @Override
     public InputTO createInput(InputTO inputTO) {
         Input entity = InputMapper.mapInputTOtoEntity(inputTO);
@@ -34,20 +35,19 @@ public class InputServiceImpl implements InputService {
     }
 
     @Override
-    public Input updateInput(InputTO inputTO, Long inputId) {
-        return inputRepository.findById(inputId)
+    public InputTO updateInput(InputTO inputTO, Long inputId) {
+        Input updatedInput = inputRepository.findById(inputId)
                 .map(input->{
                     input.setInputDate(inputTO.getInputDate());
                     input.setInputDescription(inputTO.getInputDescription());
                     input.setInputAmount(inputTO.getInputAmount());
+                    input.setInputCategory(inputTO.getInputCategory());
                     return inputRepository.save(input);
                 })
-                .orElseGet(() -> {
-                    //Exception
-                    Input entity = InputMapper.mapInputTOtoEntity(inputTO);
-                    entity.setInputId(inputId);
-                    return inputRepository.save(entity);
+                .orElseThrow(() -> {
+                    return new IllegalStateException("no find ID");
                 });
+        return InputMapper.mapInputEntitytoTO(updatedInput);
     }
 
     @Override
@@ -55,3 +55,7 @@ public class InputServiceImpl implements InputService {
         inputRepository.deleteById(inputId);
     }
 }
+
+//.orElseThrow(()->new ResourceNotFoundException("User with ID :"+id+" Not Found!"));
+//
+//                user.setId(puser.getId());

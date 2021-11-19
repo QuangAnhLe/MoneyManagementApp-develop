@@ -9,6 +9,6 @@ public interface InputService {
 
     List<InputTO> getInputs();
     InputTO createInput(InputTO inputTO);
-    Input updateInput(InputTO inputTO, Long inputId);
+    InputTO updateInput(InputTO inputTO, Long inputId) throws IllegalStateException;
     void deleteInput(Long inputId);
 }
