@@ -11,6 +11,6 @@ public interface OutputController {
 
     List<OutputTO> getOutput();
     OutputTO createOutput(OutputTO outputTO);
-    Output updateOutput(OutputTO outputTO, Long outputId);
+    OutputTO updateOutput(OutputTO outputTO, Long outputId);
     void deleteOutput(Long outputId);
 }

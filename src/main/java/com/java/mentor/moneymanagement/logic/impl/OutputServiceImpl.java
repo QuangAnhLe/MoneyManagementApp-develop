@@ -38,8 +38,8 @@ public class OutputServiceImpl implements OutputService {
     }
 
     @Override
-    public Output updateOutput(OutputTO outputTO, Long outputId) {
-        return outputRepository.findById(outputId)
+    public OutputTO updateOutput(OutputTO outputTO, Long outputId) {
+        Output updatedOutput = outputRepository.findById(outputId)
                 .map(output->{
                     output.setOutputDate(outputTO.getOutputDate());
                     output.setOutputDescription(outputTO.getOutputDescription());
@@ -47,12 +47,10 @@ public class OutputServiceImpl implements OutputService {
                     output.setOutputCategory(outputTO.getOutputCategory());
                     return outputRepository.save(output);
                 })
-                .orElseGet(() -> {
-                    //Exception
-                    Output entity = OutputMapper.mapOutputTOtoEntity(outputTO);
-                    entity.setOutputId(outputId);
-                    return outputRepository.save(entity);
-                });
+                .orElseThrow(() -> {
+                        return new IllegalStateException("no find ID");
+                    });
+        return OutputMapper.mapOutputEntitytoTO(updatedOutput);
     }
 
     @Override

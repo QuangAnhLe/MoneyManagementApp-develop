@@ -30,8 +30,12 @@ public class OutputControllerImpl implements OutputController {
     }
 
     @PutMapping("/output/{id}")
-    public Output updateOutput(@RequestBody OutputTO outputTO, @PathVariable Long id){
-        return outputService.updateOutput(outputTO, id);
+    public OutputTO updateOutput(@RequestBody OutputTO outputTO, @PathVariable Long id){
+        try {
+            return outputService.updateOutput(outputTO, id);
+        }catch (IllegalStateException illegalStateException ){
+            return new OutputTO();
+        }
     }
     @DeleteMapping("/output/{id}")
     public void deleteOutput(@PathVariable Long id) {

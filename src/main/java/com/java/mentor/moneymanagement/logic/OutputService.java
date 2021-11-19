@@ -11,6 +11,6 @@ public interface OutputService {
 
     List<OutputTO> getOutputs();
     OutputTO createOutput(OutputTO outputTO);
-    Output updateOutput(OutputTO outputTO, Long outputId);
+    OutputTO updateOutput(OutputTO outputTO, Long outputId) throws IllegalStateException;
     void deleteOutput(Long outputId);
 }

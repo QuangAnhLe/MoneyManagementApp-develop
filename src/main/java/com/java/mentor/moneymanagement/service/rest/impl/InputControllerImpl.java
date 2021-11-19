@@ -45,19 +45,3 @@ public class InputControllerImpl implements InputController {
         inputService.deleteInput(id);
     }
 }
-//@PutMapping("/{userId}")
-//    public User issueBookByName(@PathVariable int userId,@RequestBody String bookName){
-//        Optional<User> optionalUser=userRepository.findById(userId);
-//        User user=optionalUser.get();
-//        if(user==null) {
-//            throw new RuntimeException("USer Not Found: "+user);
-//        }
-//        System.out.println(user.getUsername());
-//        System.out.println(bookName+" "+bookName.getClass());
-//        Book theBook=bookRepository.findByBookName(bookName);
-//        System.out.println(theBook.getbName());
-//
-//        user.addBook(theBook);
-//
-//        return userRepository.save(user);
-//    }
