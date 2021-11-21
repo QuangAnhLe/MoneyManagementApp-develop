@@ -45,7 +45,7 @@ public class InputServiceImpl implements InputService {
                     return inputRepository.save(input);
                 })
                 .orElseThrow(() -> {
-                    return new IllegalStateException("no find ID");
+                    throw new IllegalStateException("no find ID");
                 });
         return InputMapper.mapInputEntitytoTO(updatedInput);
     }
@@ -55,7 +55,3 @@ public class InputServiceImpl implements InputService {
         inputRepository.deleteById(inputId);
     }
 }
-
-//.orElseThrow(()->new ResourceNotFoundException("User with ID :"+id+" Not Found!"));
-//
-//                user.setId(puser.getId());

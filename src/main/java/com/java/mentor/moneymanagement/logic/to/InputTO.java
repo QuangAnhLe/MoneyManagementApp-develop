@@ -68,7 +68,7 @@ public class InputTO {
         return Objects.equals(inputId, that.inputId) && Objects.equals(inputDate, that.inputDate)
                 && Objects.equals(inputDescription, that.inputDescription)
                 && Objects.equals(inputAmount, that.inputAmount)
-                && Objects.equals(inputDescription, that.inputDescription);
+                && Objects.equals(inputCategory, that.inputCategory);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class InputTO {
                 inputDate,
                 inputDescription,
                 inputAmount,
-                inputDescription);
+                inputCategory);
     }
 
 }

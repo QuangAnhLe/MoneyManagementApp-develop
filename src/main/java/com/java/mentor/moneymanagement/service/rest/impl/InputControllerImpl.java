@@ -1,16 +1,12 @@
 package com.java.mentor.moneymanagement.service.rest.impl;
 
-import com.java.mentor.moneymanagement.dataaccess.InputRepository;
-import com.java.mentor.moneymanagement.dataaccess.entity.Input;
+
 import com.java.mentor.moneymanagement.logic.InputService;
-import com.java.mentor.moneymanagement.logic.mapper.InputMapper;
 import com.java.mentor.moneymanagement.logic.to.InputTO;
 import com.java.mentor.moneymanagement.service.rest.InputController;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 public class InputControllerImpl implements InputController {
