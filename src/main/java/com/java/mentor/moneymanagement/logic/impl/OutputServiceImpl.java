@@ -48,7 +48,7 @@ public class OutputServiceImpl implements OutputService {
                     return outputRepository.save(output);
                 })
                 .orElseThrow(() -> {
-                        return new IllegalStateException("no find ID");
+                        throw new IllegalStateException("no find ID");
                     });
         return OutputMapper.mapOutputEntitytoTO(updatedOutput);
     }

@@ -66,12 +66,17 @@ public class OutputTO {
         return Objects.equals(outputId, that.outputId)
                 && Objects.equals(outputDate, that.outputDate)
                 && Objects.equals(outputDescription, that.outputDescription)
-                && Objects.equals(outputAmount, that.outputAmount);
+                && Objects.equals(outputAmount, that.outputAmount)
+                && Objects.equals(outputCategory, that.outputCategory);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(outputId, outputDate, outputDescription, outputAmount);
+        return Objects.hash(outputId,
+                outputDate,
+                outputDescription,
+                outputAmount,
+                outputCategory);
     }
 
 
