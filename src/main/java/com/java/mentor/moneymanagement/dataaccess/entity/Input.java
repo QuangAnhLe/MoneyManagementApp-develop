@@ -4,29 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class Input {
-/*- inputId: long
-- inputDate: String
-- inputDescription: String
-- inputCategory: String
-- inputAmount: String*/
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-    private Long inputId;
-    private String inputDate;
-    private String inputDescription;
-    private String inputCategory;
-    private String inputAmount;
 
-    public Input(Long inputId, String inputDate, String inputDescription, String inputCategory, String inputAmount) {
-        this.inputId = inputId;
-        this.inputDate = inputDate;
-        this.inputDescription = inputDescription;
-        this.inputCategory = inputCategory;
-        this.inputAmount = inputAmount;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long inputId;
+    private Long inputDate;
+    private String inputDescription;
+    private Category inputCategory;
+    private BigDecimal inputAmount;
 
     public Long getInputId() {
         return inputId;
@@ -36,11 +25,11 @@ public class Input {
         this.inputId = inputId;
     }
 
-    public String getInputDate() {
+    public Long getInputDate() {
         return inputDate;
     }
 
-    public void setInputDate(String inputDate) {
+    public void setInputDate(Long inputDate) {
         this.inputDate = inputDate;
     }
 
@@ -52,19 +41,19 @@ public class Input {
         this.inputDescription = inputDescription;
     }
 
-    public String getInputCategory() {
+    public Category getInputCategory() {
         return inputCategory;
     }
 
-    public void setInputCategory(String inputCategory) {
+    public void setInputCategory(Category inputCategory) {
         this.inputCategory = inputCategory;
     }
 
-    public String getInputAmount() {
+    public BigDecimal getInputAmount() {
         return inputAmount;
     }
 
-    public void setInputAmount(String inputAmount) {
+    public void setInputAmount(BigDecimal inputAmount) {
         this.inputAmount = inputAmount;
     }
 }

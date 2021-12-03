@@ -1,14 +1,17 @@
 package com.java.mentor.moneymanagement.logic.to;
 
+import com.java.mentor.moneymanagement.dataaccess.entity.Category;
+
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class InputTO {
 
     private Long inputId;
-    private String inputDate;
+    private Long inputDate;
     private String inputDescription;
-    private String inputAmount;
-
+    private BigDecimal inputAmount;
+    private Category inputCategory;
 
     public Long getInputId() {
         return inputId;
@@ -20,11 +23,11 @@ public class InputTO {
     }
 
 
-    public String getInputDate() {
+    public Long getInputDate() {
         return inputDate;
     }
 
-    public InputTO setInputDate(String inputDate) {
+    public InputTO setInputDate(Long inputDate) {
         this.inputDate = inputDate;
         return this;
     }
@@ -38,28 +41,43 @@ public class InputTO {
         return this;
     }
 
-    public String getInputAmount() {
+    public BigDecimal getInputAmount() {
         return inputAmount;
     }
 
-    public InputTO setInputAmount(String inputAmount) {
+    public InputTO setInputAmount(BigDecimal inputAmount) {
         this.inputAmount = inputAmount;
         return this;
     }
 
+    public Category getInputCategory() {
+        return inputCategory;
+    }
+
+    public InputTO setInputCategory(Category inputCategory) {
+        this.inputCategory = inputCategory;
+        return this;
+    }
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof InputTO)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof InputTO))
+            return false;
         InputTO that = (InputTO) o;
-        return Objects.equals(inputId, that.inputId)
-                && Objects.equals(inputDate, that.inputDate)
+        return Objects.equals(inputId, that.inputId) && Objects.equals(inputDate, that.inputDate)
                 && Objects.equals(inputDescription, that.inputDescription)
-                && Objects.equals(inputAmount, that.inputAmount);
+                && Objects.equals(inputAmount, that.inputAmount)
+                && Objects.equals(inputCategory, that.inputCategory);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(inputId, inputDate, inputDescription, inputAmount);
+        return Objects.hash(inputId,
+                inputDate,
+                inputDescription,
+                inputAmount,
+                inputCategory);
     }
+
 }

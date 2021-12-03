@@ -1,7 +1,6 @@
 package com.java.mentor.moneymanagement.logic.impl;
 
 import com.java.mentor.moneymanagement.dataaccess.BillionaireRepository;
-import com.java.mentor.moneymanagement.dataaccess.entity.Billionaire;
 import com.java.mentor.moneymanagement.logic.BillionaireService;
 import com.java.mentor.moneymanagement.logic.mapper.BillionareMapper;
 import com.java.mentor.moneymanagement.logic.to.BillionaireTO;

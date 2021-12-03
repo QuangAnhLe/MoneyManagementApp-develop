@@ -4,11 +4,22 @@ import com.java.mentor.moneymanagement.logic.to.InputTO;
 
 public class InputMapper {
 
-    public static InputTO mapInputEntitytoT(Input input){
+    public static InputTO mapInputEntitytoTO(Input input){
         return new InputTO()
                 .setInputId(input.getInputId())
                 .setInputDate(input.getInputDate())
                 .setInputDescription(input.getInputDescription())
-                .setInputAmount(input.getInputAmount());
+                .setInputAmount(input.getInputAmount())
+                .setInputCategory(input.getInputCategory());
     }
+    public static Input mapInputTOtoEntity(InputTO inputto){
+        Input entity = new Input();
+        entity.setInputId(inputto.getInputId());
+        entity.setInputDate(inputto.getInputDate());
+        entity.setInputDescription(inputto.getInputDescription());
+        entity.setInputAmount(inputto.getInputAmount());
+        entity.setInputCategory(inputto.getInputCategory());
+        return entity;
+    }
+
 }
